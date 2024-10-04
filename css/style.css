@@ -19,15 +19,17 @@ a {
 
 /*Front Page*/
 .front {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     min-height: 70vh;
     background-image: url('../img/as12-47-6899-apollo-12-apollo-12-mission-image-lm-on-edge-of-the-surveyor-crater-b090a8.jpeg');
     background-size: 100% auto; /* Ensures the image covers the whole area */
     background-position: bottom center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the image fixed when scrolling */
+}
+.front .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .front h1 {
   font-size: 5em;
@@ -65,6 +67,15 @@ a {
 }
 .front-author {
   bottom: 5%;
+}
+.front aside {
+  color: #cccccc;
+  font-size: 8px;
+  position: absolute;
+  bottom: 0;
+}
+.front aside a {
+  color: #cccccc;
 }
 @media screen and (max-width: 810px) {
   .front h1 {
