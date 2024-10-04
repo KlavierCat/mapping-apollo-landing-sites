@@ -22,7 +22,7 @@ a {
     min-height: 70vh;
     background-image: url('../img/as12-47-6899-apollo-12-apollo-12-mission-image-lm-on-edge-of-the-surveyor-crater-b090a8.jpeg');
     background-size: 100% auto; /* Ensures the image covers the whole area */
-    background-position: bottom center; /* Centers the background image */
+    background-position: center bottom; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Keeps the image fixed when scrolling */
 }
@@ -72,7 +72,7 @@ a {
   color: #cccccc;
   font-size: 8px;
   position: absolute;
-  bottom: 0;
+  bottom: 2px;
 }
 .front aside a {
   color: #cccccc;
