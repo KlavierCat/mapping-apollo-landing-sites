@@ -3,7 +3,7 @@ body {
   font-family: "Neue Helvetica", Helvetica, Arial, sans-serif;
   background-color: black;
   color: white;
-  margin: 7%;
+  margin: 6%;
 }
 h1, h2 {
   font-family: "Times New Roman", Times, serif;
@@ -20,7 +20,7 @@ a {
 /*Front Page*/
 .front {
     min-height: 70vh;
-    background-image: url('../img/as12-47-6899-apollo-12-apollo-12-mission-image-lm-on-edge-of-the-surveyor-crater-b090a8.jpeg');
+    background-image: url('../img/as12-47-6899-sm.jpeg');
     background-size: 100% auto; /* Ensures the image covers the whole area */
     background-position: center bottom; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
