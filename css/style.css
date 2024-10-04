@@ -97,6 +97,9 @@ a {
 /* End of Report Page */
 
 /* Map Page */
+.map header p {
+  line-height: 1.4;
+}
 .map div.gallery {
   margin-bottom: 40px;
   border: 1px solid #ccc;

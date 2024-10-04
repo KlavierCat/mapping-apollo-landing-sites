@@ -17,19 +17,19 @@
             <p><strong>Author:</strong> Panpan Lin<br/><strong>Email:</strong> <a href="mailto:G00438934@atu.ie">G00438934@atu.ie</a></p>
         </header>
 
-        <section>
-            <h2>Choice of Map</h2>
+        <section aria-labelledby="choice-of-map">
+            <h2 id="choice-of-map">Choice of Map</h2>
             <p>I chose the Apollo landing sites as my map subject for several reasons. First, I wanted to gain a deeper understanding of some core concepts in GIS, such as the coordinate reference system. Mapping a different planet allows me to dive deep into these subjects. Second, I am curious about planetary GIS and how QGIS can be applied to celestial bodies other than Earth. Third, among non-Earth bodies, the Moon and Mars have the most data available. As a layman, I did not really understand most of the planetary data I was looking at, but the Apollo landing was something I did understand, so naturally, I decided to map this topic.</p>
             <p>After conducting more research on the Moon, the Apollo missions, and coordinate reference systems in general, I decided to make two maps with different projections: an orthographic projection and a cylindrical projection. The cylindrical projection will present the landing sites in a more traditional way that many map readers are familiar with, while the orthographic projection will provide us earthlings the perspective of looking at the Moon from Earth. This is feasible because all the Apollo landing sites are on the near side of the Moon, not too far from the equator, so they can be presented quite well in an orthographic projection.</p>
         </section>
 
-        <section>
-            <h2>Story</h2>
+        <section aria-labelledby="story">
+            <h2 id="story">Story</h2>
             <p>The two maps mainly focus on plotting the Apollo landing sites at the correct locations. On one of the maps, I included key dates and crew information to add a bit of storyline and background information. I was fortunate enough to find a color-shaded relief showing elevation data of the Moon, which I used for both the orthographic projection (after turning it into grayscale) and the cylindrical projection, to better show the landscape around the landing sites.</p>
         </section>
 
-        <section>
-            <h2>Data Sources</h2>
+        <section aria-labelledby="data-sources">
+            <h2 id="data-sources">Data Sources</h2>
             <ol>
                 <li><a href="https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_sites.html" target="_blank" rel="noopener noreferrer">Apollo Landing Site Coordinates (Lunar Module): NASA Space Science Data Coordinated Archive</a></li>
                 <li><a href="https://www.nasa.gov/specials/apollo50th/missions.html" target="_blank" rel="noopener noreferrer">Apollo missions’ info (crews and key dates): NASA website</a></li>
@@ -40,15 +40,15 @@
             </ol>
         </section>
 
-        <section>
-            <h2>Data Compilation and Manipulation</h2>
+        <section aria-labelledby="data-compilation">
+            <h2 id="data-compilation">Data Compilation and Manipulation</h2>
             <p>For Apollo landing site data, I copied the coordinates table from the NASA website into Excel, edited it, and produced a CSV file using coordinates from the Lunar Module, which are based on the planetocentric Mean Earth/Polar Axis Lunar Reference System. I then set up a new QGIS project with the only predefined CRS for the Moon in QGIS: “ESRI:104903 GCS_MOON_2000”, a planetocentric Mean Earth/Polar Axis Lunar Reference System and a supported CRS of the base layers adopted by Lunaserv. Lastly, I added the Apollo CSV layer into this project, verified their position using the Apollo Lunar Module raster layer from Lunaserv, and exported my Apollo delimited text layer as a vector layer in geopackage format, first in ESRI:104903, then in IAU_2015:30115 for the map in cylindrical projection, and in the customed orthographic CRS used by the LROC base image for the map in orthographic projection.</p>
             <p>For the lunar maria layer, I selected major lunar maria on the near side of the Moon from the LROC_GLOBAL_MARE_180 shapefile downloaded from ASU’s website, collected them using the mare’s name as there are multiple entries forming the same larger feature, and then exported them into the different CRSs I was dealing with.</p>
             <p>To present the shaded relief data in grayscale on the orthographic projection, I changed the symbology of the color-shaded relief layer from multiband to singleband.</p>
         </section>
 
-        <section>
-            <h2>Difficulties Encountered</h2>
+        <section aria-labelledby="difficulties-encountered">
+            <h2 id="difficulties-encountered">Difficulties Encountered</h2>
             <p>The first difficulty was related to data sources: finding vector and raster layers for the Moon and understanding them. Research revealed two good web map services (WMS) for lunar base maps: Lunaserv WMS from Arizona State University and USGS WMS, which we can connect directly from QGIS. In addition to Lunaserv, Arizona State University has many other resources from the Lunar Reconnaissance Orbiter Camera (LROC), including georeferenced raster layers and shapefiles (e.g., for lunar maria) that can be downloaded directly from their website.</p>
             <p>Initially, after following old documentation on how to set up QGIS v2 to connect to Lunaserv, the base layers did not display correctly. An online search revealed a tip for QGIS v3.x users on setting up the CRS correctly for these layers, even though the article was written for a different WMS.</p>
             <p>The second difficulty was related to CRS: figuring out which CRSs to use to set up the QGIS projects for the two map views, understanding the CRSs adopted in the various base maps, shapefiles, and the Apollo data itself, and translating/reprojecting (warping) the data and images from one system to another as needed.</p>
@@ -58,14 +58,14 @@
             <p>Another minor difficulty related to the layout was that in my orthographic map, I wanted the title to have the word “APOLLO” larger and “LANDING” smaller, making them occupy the same length without creating two text boxes. I achieved this by rendering the text box as HTML and using HTML tags to specify the font size for each word.</p>
         </section>
 
-        <section>
-            <h2>Things Learned</h2>
+        <section aria-labelledby="things-learned">
+            <h2 id="things-learned">Things Learned</h2>
             <p>I have learned a lot about the Moon, its shape and size, its features, nomenclature, and its coordinate reference systems. Before, the Moon was just the Moon, but now when I look at it, I can see details I never noticed before. I recognize many of the “seas” I mapped, and I can just about tell where some of the Apollo landing sites were. It appears more beautiful to me than ever. I have also gained a much deeper understanding of coordinate reference systems in general, how to read and edit WKT strings, and how to translate geospatial data between these different systems or warp/reproject a raster image using QGIS and other tools. I can run a GDAL command following its documentation after some trials and errors.</p>
             <p>I would say I now have some basic knowledge of planetary GIS, and if I were given a task to map a non-Earth body again, I would know what to look for and where to start.</p>
         </section>
 
-        <section>
-            <h2>Notes</h2>
+        <section aria-labelledby="notes">
+            <h2 id="notes">Notes</h2>
             <ul>
                 <li><a href="https://lunaserv.lroc.asu.edu/getting_started_with_lunaserv_and_qgis.pdf" target="_blank" rel="noopener noreferrer">Getting Started with Lunaserv and QGIS</a></li>
                 <li><a href="http://planetarygis.blogspot.com/2014/09/tips-to-interact-with-astros-wms-maps.html" target="_blank" rel="noopener noreferrer">Tips to interact with Astro’s WMS maps</a></li>
