@@ -1,4 +1,4 @@
-/*Global Style*/
+/*Shared Style*/
 body {
   font-family: "Neue Helvetica", Helvetica, Arial, sans-serif;
   background-color: black;
@@ -11,7 +11,11 @@ h1, h2 {
 a {
   color: white;
 }
-/*End of Global Style*/
+.report header, .map header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+/*End of Shared Style*/
 
 /*Front Page*/
 .front h1 {
@@ -73,15 +77,8 @@ a {
 /*End of Front Page*/
 
 /* Report Page */
-.report body {
-  color: #c8c8c8;
-  line-height: 2;
-  margin: 20px;
-}
-.report h1,
-.report h2,
-.report h3 {
-  color: #fff;
+.report h1 {
+  font-size: 2em;
 }
 .report a {
   text-decoration: none;
@@ -93,24 +90,28 @@ a {
   margin: 10px 0;
   padding-left: 20px;
 }
+.report p, .report ol, .report ul {
+  line-height: 2;
+  margin: 20px 0;
+}
 /* End of Report Page */
 
 /* Map Page */
-div.gallery {
+.map div.gallery {
   margin-bottom: 40px;
   border: 1px solid #ccc;
 }
 
-div.gallery:hover {
+.map div.gallery:hover {
   border: 1px solid #777;
 }
 
-div.gallery img {
+.map div.gallery img {
   width: 100%;
   height: auto;
 }
 
-div.desc {
+.map div.desc {
   padding: 15px;
   text-align: center;
 }
